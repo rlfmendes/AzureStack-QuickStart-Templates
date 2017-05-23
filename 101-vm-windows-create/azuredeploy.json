@@ -99,7 +99,6 @@
         {
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[toLower(parameters('newStorageAccountName'))]",
-            "apiVersion": "2015-06-15",
             "location": "[variables('location')]",
             "properties": {
                 "accountType": "[variables('storageAccountType')]"
