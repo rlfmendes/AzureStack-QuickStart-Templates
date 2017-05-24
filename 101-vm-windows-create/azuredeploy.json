@@ -101,7 +101,7 @@
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[toLower(parameters('newStorageAccountName'))]",
             "location": "[variables('location')]",
-            "sku": "[variables('storageAccountType')]",
+            "sku": {"name": "[variables('storageAccountType')]"},
             "kind": "Storage"
         },
         {
