@@ -97,7 +97,6 @@
             }
         },
         {
-            "apiVersion": "2016-01-01",
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[toLower(parameters('newStorageAccountName'))]",
             "location": "[variables('location')]",
