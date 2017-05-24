@@ -97,12 +97,12 @@
             }
         },
         {
+            "apiVersion": "2016-01-01",
             "type": "Microsoft.Storage/storageAccounts",
             "name": "[toLower(parameters('newStorageAccountName'))]",
             "location": "[variables('location')]",
-            "properties": {
-                "accountType": "[variables('storageAccountType')]"
-            }
+            "sku": "[variables('storageAccountType')]",
+            "kind": "Storage"
         },
         {
             "apiVersion": "2015-05-01-preview",
