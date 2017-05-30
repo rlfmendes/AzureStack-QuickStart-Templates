@@ -71,7 +71,6 @@
     },
     "resources": [
         {
-            "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Network/networkSecurityGroups",
             "name": "[variables('networkSecurityGroupName')]",
             "location": "[variables('location')]",
@@ -106,7 +105,6 @@
             "kind": "Storage"
         },
         {
-            "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Network/virtualNetworks",
             "name": "[variables('virtualNetworkName')]",
             "location": "[variables('location')]",
@@ -133,7 +131,6 @@
             }
         },
         {
-            "apiVersion": "2015-05-01-preview",
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('nicName')]",
             "location": "[variables('location')]",
