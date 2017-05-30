@@ -193,9 +193,13 @@
     }
   ],
   "outputs": {
+    "vmUserName": {
+      "type":"string",
+      "value": "[parameters('adminUserName')]"
+    },
     "vmPassword": {
       "type":"string",
       "value": "[parameters('adminPassword')]"
-    }  
+    } 
   }
 }
