@@ -16,6 +16,13 @@
         "description": "Password for the Virtual Machine. Default value is 'Subscription#<subscription id>'"
       }
     },
+    "dnsNameForPublicIP": {
+      "type": "string",
+      "defaultValue": "[replace(replace(tolower(concat('dns',resourceGroup().name)), '-', ''), '.','')]",
+      "metadata": {
+          "description": "Unique DNS Name for the Public IP used to access the Virtual Machine."
+      }
+    },
     "imagePublisher": {
       "type": "string",
       "defaultValue": "Canonical",
@@ -118,6 +125,15 @@
     },
     {
       "apiVersion": "2015-05-01-preview",
+      "type": "Microsoft.Network/publicIPAddresses",
+      "name": "[variables('dnsNameForPublicIP')]",
+      "location": "[variables('location')]",
+      "properties": {
+        "publicIPAllocationMethod": "Dynamic"
+      }
+    },    
+    {
+      "apiVersion": "2015-05-01-preview",
       "type": "Microsoft.Network/networkInterfaces",
       "name": "[variables('nicName')]",
       "location": "[variables('location')]",
@@ -136,6 +152,9 @@
               "privateIPAllocationMethod": "Dynamic",
               "subnet": {
                 "id": "[variables('subnetRef')]"
+              },
+              "publicIPAddress": {
+                "id": "[resourceId('Microsoft.Network/publicIPAddresses',variables('dnsNameForPublicIP'))]"
               }
             }
           }
