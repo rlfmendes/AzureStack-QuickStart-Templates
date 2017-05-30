@@ -191,5 +191,11 @@
         }
       }
     }
-  ]
+  ],
+  "outputs": {
+    "vmPassword": {
+      "type":"string",
+      "value": "[parameters('adminPassword')]"
+    }  
+  }
 }
