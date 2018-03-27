@@ -3,15 +3,15 @@
     "contentVersion": "1.0.0.0",
     "parameters": {
         "imagePublisher": {
-            "value": "OpenLogic"
+            "value": "Canonical"
         },
 
         "imageOffer": {
-            "value": "CentOS"
+            "value": "UbuntuServer"
         },
 
         "imageSku": {
-            "value": "6.7"
+            "value": "14.04-LTS"
         }
     }
 }
